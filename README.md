@@ -1,6 +1,6 @@
 # LegalEase NSW: AI-Powered Legal Document and Legislation Summariser
 
-This is a MDSI project for UTS 36118 ANLP.
+This is a UTS MDSI project for 36118 ANLP.
 
 The application uses the `facebook/bart-large-cnn` model to summarise legal documents and legislation in NSW.
 
