@@ -1,4 +1,4 @@
-# LegalEase NSW: AI-Powered Legal Document and Legislation Summariser
+# LegalEase NSW: AI-Powered Legal Document and Legislation Translator
 
 This is a UTS MDSI project for 36118 ANLP.
 
