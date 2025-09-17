@@ -5,15 +5,31 @@ from src.summariser import initialise_summariser, summarise_text
 import time
 import fitz  # PyMuPDF
 from pathlib import Path
+import base64
 
-# --- App Title and Description ---
-st.title("LegalEase: Law jargon translator")
-st.write(
-    "Fed up with confusing legalese? Upload your PDF document or paste text directly and find out what it means in simple English."
-    "NOTE: This app is no substitute for legal advice."
-)
+# LOAD EXTERNAL CSS FILE
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# --- Caching the Model ---
+st.set_page_config(layout="wide")
+load_css("static/style.css")
+
+# HEADER
+
+col1, col2, col3 = st.columns([1, 3, 1])
+with col1:
+    st.image("static/logo.jpg", width=200)
+with col2:
+    st.markdown("<h1>LegalEase NSW</h1>", unsafe_allow_html=True)
+    st.markdown("<h3>AI-Powered Legal Document and Legislation Summariser</h3>", unsafe_allow_html=True)
+with col3:
+    st.image("static/logo.jpg", width=200)
+
+st.markdown("---")
+
+# MODEL LOADING
+
 @st.cache_resource
 def load_model():
     """Loads the summarisation model and its tokeniser."""
@@ -22,57 +38,77 @@ def load_model():
 
 summariser, tokeniser = load_model()
 
-# --- Create Tabs for Different Input Methods ---
-tab1, tab2 = st.tabs(["Summarise a PDF Document", "Summarise Pasted Text"])
+# MAIN APP BODY (TWO-COLUMN LAYOUT)
 
-# --- Tab 1: PDF Uploader ---
-with tab1:
-    st.header("Upload Your Document")
-    uploaded_file = st.file_uploader("Choose a PDF file to summarise...", type="pdf")
+left_col, right_col = st.columns([1, 3])
 
-    if uploaded_file is not None:
-        try:
-            pdf_bytes = uploaded_file.getvalue()
-            pdf_document = fitz.open(stream=pdf_bytes, filetype="pdf")
-            
-            extracted_text = ""
-            for page in pdf_document:
-                extracted_text += page.get_text()
+# LEFT COLUMN: Information and disclaimer
+with left_col:
+    st.write(
+        "Fed up with confusing legalese? Had enough of complicated legislation jargon? Does red tape make you see red? Add any document  and find out what they're really saying in plain English."
+    )
 
-            st.info(f"Successfully extracted {len(extracted_text.split())} words from the PDF.")
-            
-            with st.spinner("The AI is summarising your document... Please wait."):
-                start_time = time.time()
-                generated_summary = summarise_text(extracted_text, summariser, tokeniser)
-                end_time = time.time()
+    st.warning(
+        "**Disclaimer:** This tool provides AI-generated summaries for informational purposes only and does not constitute legal advice. "
+        "It is not a substitute for a qualified legal professional. Always consult a lawyer for advice."
+    )
 
-            st.subheader("Generated Summary")
-            st.success(f"Summary generated in {end_time - start_time:.2f} seconds.")
-            st.write(generated_summary)
+# RIGHT COLUMN: Input tabs
+with right_col:
+    tab1, tab2 = st.tabs(["Translate text", "Translate PDF document"])
 
-            with st.expander("Click to view the full extracted text"):
-                st.text(extracted_text)
+    # Tab 1: Text input
+    with tab1:
+        user_text = st.text_area("Paste the legal document you want translated here:", height=250, label_visibility="collapsed")
 
-        except Exception as e:
-            st.error(f"An error occurred while processing the PDF: {e}")
+        if st.button("Translate text"):
+            # **FIX IS HERE**: Check if user_text exists AND has non-whitespace characters
+            if user_text and user_text.strip():
+                word_count = len(user_text.split())
+                st.info(f"Processing {word_count} words of pasted text.")
+                
+                with st.spinner("LegalEase is translating your pasted text ... please wait."):
+                    start_time = time.time()
+                    generated_summary = summarise_text(user_text, summariser, tokeniser)
+                    end_time = time.time()
 
-# --- Tab 2: Text Input ---
-with tab2:
-    st.header("Paste Your Text")
-    user_text = st.text_area("Paste the legal text you want to summarise here (e.g., from a contract or letter):", height=250)
+                st.subheader("Your translation")
+                st.success(f"Translation generated in {end_time - start_time:.2f} seconds.")
+                st.write(generated_summary)
+            else:
+                st.warning("Please paste your text into the box to translate.")
 
-    if st.button("Summarise Pasted Text"):
-        if user_text:
-            word_count = len(user_text.split())
-            st.info(f"Processing {word_count} words of pasted text.")
-            
-            with st.spinner("The AI is summarising your text... Please wait."):
-                start_time = time.time()
-                generated_summary = summarise_text(user_text, summariser, tokeniser)
-                end_time = time.time()
+    # Tab 2: PDF upload
+    with tab2:
+        uploaded_file = st.file_uploader("Upload a PDF file to translate.", type="pdf", label_visibility="collapsed")
 
-            st.subheader("Generated Summary")
-            st.success(f"Summary generated in {end_time - start_time:.2f} seconds.")
-            st.write(generated_summary)
-        else:
-            st.warning("Please paste some text into the box to summarise.")
+        if uploaded_file is not None:
+            if st.button("Translate PDF"):
+                try:
+                    pdf_bytes = uploaded_file.getvalue()
+                    pdf_document = fitz.open(stream=pdf_bytes, filetype="pdf")
+                    
+                    extracted_text = ""
+                    for page in pdf_document:
+                        extracted_text += page.get_text().replace('\n', ' ') + ' '
+
+                    # **FIX IS HERE**: Also apply the robust check to the text extracted from the PDF
+                    if extracted_text and extracted_text.strip():
+                        st.info(f"Successfully extracted {len(extracted_text.split())} words from your PDF.")
+                        
+                        with st.spinner("LegalEase is translating your text ... please wait."):
+                            start_time = time.time()
+                            generated_summary = summarise_text(extracted_text, summariser, tokeniser)
+                            end_time = time.time()
+
+                        st.subheader("Your translation")
+                        st.success(f"Translation generated in {end_time - start_time:.2f} seconds.")
+                        st.write(generated_summary)
+
+                        with st.expander("Click to view the full extracted text"):
+                            st.text(extracted_text)
+                    else:
+                        st.warning("Could not find any text in the uploaded PDF.")
+
+                except Exception as e:
+                    st.error(f"An error occurred while processing your PDF: {e}")
