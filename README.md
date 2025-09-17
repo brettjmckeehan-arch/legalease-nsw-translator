@@ -2,7 +2,7 @@
 
 This is a UTS MDSI project for 36118 ANLP.
 
-The application uses the `facebook/bart-large-cnn` model to summarise legal documents and legislation in NSW.
+The application uses the `facebook/bart-large-cnn` model to translate legal documents and legislation in NSW.
 
 Disclaimer: This tool provides AI-generated summaries for informational purposes only and does not constitute legal advice.
 It is not a substitute for a qualified legal professional. Always consult a lawyer for advice on your specific situation.
