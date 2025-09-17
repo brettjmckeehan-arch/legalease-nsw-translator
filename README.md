@@ -7,7 +7,7 @@ The application uses the `facebook/bart-large-cnn` model to translate legal docu
 Disclaimer: This tool provides AI-generated summaries for informational purposes only and does not constitute legal advice.
 It is not a substitute for a qualified legal professional. Always consult a lawyer for advice on your specific situation.
 
-### Setup Instructions
+### Setup
 
 Follow these steps to run LegalEase on your local machine.
 
