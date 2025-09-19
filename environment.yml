@@ -154,3 +154,4 @@ dependencies:
       - tzdata==2025.2
       - watchdog==6.0.0
 prefix: C:\Users\mckee\miniconda3\envs\legalease
+
