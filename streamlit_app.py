@@ -7,13 +7,21 @@ import fitz  # PyMuPDF
 from pathlib import Path
 import base64
 
-# LOAD EXTERNAL CSS FILE
+# COOL TAB
+st.set_page_config(
+    page_title="LegalEase NSW",
+    page_icon="⚖️",
+    layout="wide"
+)
+
+# LOAD CSS FILE
 def load_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 st.set_page_config(layout="wide")
 load_css("static/style.css")
+
 
 # HEADER
 
