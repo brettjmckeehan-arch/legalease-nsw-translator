@@ -1,0 +1,13 @@
+# .streamlit/config.toml
+
+[theme]
+# Set primary color for elements CSS can't reach
+primaryColor="#0052CC"
+
+[server]
+# Hide "Deploy" button in top right
+headless = true
+
+[ui]
+# Hide hamburger menu in top right
+hideTopBar = true
