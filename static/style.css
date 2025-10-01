@@ -28,32 +28,20 @@ div[data-testid="stNotification"] p {
     font-size: 0.3rem !important;
 }
 
-/* TABS */
-[data-baseweb="tab-list"] {{
-    gap: 2px;
-}}
-
-[data-baseweb="tab"] {{
-    height: 45px;
-    background-color: #DEE9FA;
-    border-radius: 8px 8px 0px 0px;
-    padding: 10px 20px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
-}}
-
-[data-baseweb="tab"]:hover {{
-    background-color: #BBD5FA;
-    border-bottom: 2px solid #0052CC;
-}}
-
-[data-baseweb="tab"][aria-selected="true"] {{
-    background-color: #DEE9FA;
-    border-bottom: 2px solid #0052CC;
-    color: #000000 !important;
-}}
-
 /* LAYOUT ADJUSTMENTS */
 div.block-container {
     padding-top: 1rem !important;
+}
+
+/* DISCLAIMER */
+div[data-testid="stAlert"] {
+    text-align: center;
+}
+
+div[data-testid="stAlert"] p {
+    font-weight: bold;
+}
+
+[data-testid="stHorizontalBlock"] {
+    align-items: flex-start;
 }
