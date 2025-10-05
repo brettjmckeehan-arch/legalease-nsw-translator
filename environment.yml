@@ -42,7 +42,7 @@ dependencies:
   - gmpy2=2.2.1
   - idna=3.7
   - importlib-metadata=8.7.0
-  - intel-openmp=2023.1.0
+  - intel-openmp=2025.0.0
   - ipykernel=6.30.1
   - ipython=9.6.0
   - ipython_pygments_lexers=1.1.1
@@ -68,6 +68,7 @@ dependencies:
   - libdeflate=1.17
   - libffi=3.4.4
   - libjpeg-turbo=2.0.0
+  - libkrb5=1.21.3
   - libnpp=12.0.2.50
   - libnpp-dev=12.0.2.50
   - libnvjitlink=12.1.105
@@ -84,8 +85,8 @@ dependencies:
   - lz4-c=1.9.4
   - markupsafe=3.0.2
   - matplotlib-inline=0.1.7
-  - mkl=2023.1.0
-  - mkl-service=2.4.0
+  - mkl=2025.0.0
+  - mkl-service=2.5.2
   - mkl_fft=1.3.11
   - mkl_random=1.2.8
   - mpc=1.3.1
@@ -93,8 +94,8 @@ dependencies:
   - mpmath=1.3.0
   - nest-asyncio=1.6.0
   - networkx=3.5
-  - numpy=2.0.1
-  - numpy-base=2.0.1
+  - numpy=2.3.3
+  - numpy-base=2.3.3
   - openjpeg=2.5.2
   - openssl=3.5.3
   - packaging=25.0
@@ -110,18 +111,19 @@ dependencies:
   - pygments=2.19.2
   - pysocks=1.7.1
   - python=3.12.11
-  - python-dateutil=2.9.0.post0
+  - python-dateutil=2.9.0post0
   - pytorch-cuda=12.1
   - pytorch-mutex=1.0
   - pywin32=311
   - pyyaml=6.0.2
   - pyzmq=27.1.0
   - requests=2.32.5
-  - setuptools=78.1.1
+  - setuptools=72.1.0
   - six=1.17.0
   - sqlite=3.50.2
   - stack_data=0.6.3
-  - tbb=2021.8.0
+  - tbb=2022.0.0
+  - tbb-devel=2022.0.0
   - tk=8.6.15
   - traitlets=5.14.3
   - typing_extensions=4.15.0
@@ -138,11 +140,14 @@ dependencies:
   - zeromq=4.3.5
   - zipp=3.23.0
   - zlib=1.3.1
-  - zstd=1.5.6
+  - zstd=1.5.7
   - pip:
       - absl-py==2.3.1
       - accelerate==1.10.1
       - aiofiles==24.1.0
+      - aiohappyeyeballs==2.6.1
+      - aiohttp==3.12.15
+      - aiosignal==1.4.0
       - altair==5.5.0
       - annotated-types==0.7.0
       - anthropic==0.68.0
@@ -151,17 +156,22 @@ dependencies:
       - azure-common==1.1.28
       - azure-core==1.35.1
       - azure-search-documents==11.5.3
+      - bert-score==0.3.13
       - blinker==1.9.0
       - brotli==1.1.0
       - cachetools==6.2.0
       - click==8.2.1
       - contourpy==1.3.3
       - cycler==0.12.1
+      - datasets==4.1.1
+      - dill==0.4.0
       - distro==1.9.0
       - docstring-parser==0.17.0
+      - evaluate==0.4.6
       - fastapi==0.117.1
       - ffmpy==0.6.1
       - fonttools==4.60.0
+      - frozenlist==1.7.0
       - fsspec==2025.9.0
       - gitdb==4.0.12
       - gitpython==3.1.45
@@ -191,11 +201,14 @@ dependencies:
       - markdown-it-py==4.0.0
       - matplotlib==3.10.6
       - mdurl==0.1.2
+      - multidict==6.6.4
+      - multiprocess==0.70.16
       - narwhals==2.5.0
       - nltk==3.9.1
       - openai==1.109.1
       - orjson==3.11.3
       - pandas==2.3.2
+      - propcache==0.3.2
       - proto-plus==1.26.1
       - protobuf==5.29.5
       - pyarrow==21.0.0
@@ -252,4 +265,6 @@ dependencies:
       - uvicorn==0.37.0
       - watchdog==6.0.0
       - websockets==15.0.1
+      - xxhash==3.6.0
+      - yarl==1.20.1
 prefix: C:\Users\mckee\miniconda3\envs\legalease
