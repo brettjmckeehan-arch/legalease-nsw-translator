@@ -23,7 +23,6 @@ def load_css(file_name):
 
 load_css("static/style.css")
 
-
 # HEADER
 col1, col2, col3 = st.columns([1, 3, 1])
 with col1:
@@ -36,23 +35,18 @@ with col3:
 
 st.markdown("---")
 
-
 # MODEL LOADING
 @st.cache_resource
 def load_model():
-    """Loads the summarisation model and its tokeniser."""
     summariser, tokeniser = initialise_summariser()
     return summariser, tokeniser
 
 summariser, tokeniser = load_model()
 
-
 # LAYOUT DEFINITION
 main_col, controls_col = st.columns([4, 1])
 
-
 # MAIN APPLICATION AREA & CONTROLS
-
 with main_col:
     # STATE 1: SHOW INPUTS
     if 'final_output' not in st.session_state or st.session_state.final_output is None:
@@ -84,11 +78,11 @@ with controls_col:
     api_provider = st.selectbox("Choose AI provider", ("Anthropic", "OpenAI", "Google"), key="api_provider")
 
     if api_provider == "Anthropic":
-        model_name = st.selectbox("Choose a model", ("claude-3-opus-20240229", "claude-3-5-sonnet-20240620", "claude-3-haiku-20240307"), key="model_name")
+        model_name = st.selectbox("Choose a model", ("claude-3-opus-20240229", "claude-4-opus-20250925", "claude-3-5-sonnet-20240620", "claude-4-haiku-20250925"), key="model_name")
     elif api_provider == "OpenAI":
-        model_name = st.selectbox("Choose a model", ("gpt-5", "gpt-4o", "gpt-4-turbo"), key="model_name")
+        model_name = st.selectbox("Choose a model", ("gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"), key="model_name")
     else: # Google
-        model_name = st.selectbox("Choose a model", ("gemini-2.5-pro-latest", "gemini-2.5-flash-latest", "gemini-1.5-pro-latest"), key="model_name")
+        model_name = st.selectbox("Choose a model", ("gemini-2.5-pro", "gemini-2.5-flash"), key="model_name")
 
     st.markdown("---")
 
@@ -102,21 +96,36 @@ with controls_col:
                 text_to_process = input_text
 
             if isinstance(text_to_process, str) and text_to_process.strip():
-                with st.spinner("Stage 1/2: Performing initial summary..."):
+                with st.spinner("Stage 1/2: Performing initial summary"):
                     initial_summary = summarise_text(text_to_process, summariser, tokeniser)
                 st.session_state.initial_summary = initial_summary
 
                 if initial_summary and "error" not in initial_summary.lower():
+                    
+                    # Combine original text and summary for Stage 2 API call
+                    stage2_input = f"""
+ORIGINAL DOCUMENT:
+---
+{text_to_process}
+---
+
+SUMMARY OF DOCUMENT:
+---
+{initial_summary}
+---
+"""
+                    # --------------------------------
+
                     with st.spinner(f"Stage 2/2: Rewriting with {api_provider}..."):
-                        final_translation = llm_handler.call_anthropic(PROMPT_OPTIONS[prompt_key], initial_summary, model_name) if api_provider == "Anthropic" else \
-                                           llm_handler.call_openai(PROMPT_OPTIONS[prompt_key], initial_summary, model_name) if api_provider == "OpenAI" else \
-                                           llm_handler.call_google(PROMPT_OPTIONS[prompt_key], initial_summary, model_name)
+                        final_translation = llm_handler.call_anthropic(PROMPT_OPTIONS[prompt_key], stage2_input, model_name) if api_provider == "Anthropic" else \
+                                           llm_handler.call_openai(PROMPT_OPTIONS[prompt_key], stage2_input, model_name) if api_provider == "OpenAI" else \
+                                           llm_handler.call_google(PROMPT_OPTIONS[prompt_key], stage2_input, model_name)
                     st.session_state.final_output = final_translation
                     st.rerun()
                 else:
-                    st.error("The local summarisation failed.")
+                    st.error("Local summarisation failed")
             else:
-                st.warning("Please provide text or a PDF.")
+                st.warning("Give me something to work with here!")
     else:
         if st.button("⬅️ Translate another", use_container_width=True):
             st.session_state.final_output = None
