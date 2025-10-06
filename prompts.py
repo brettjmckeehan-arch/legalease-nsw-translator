@@ -112,3 +112,6 @@ Output style:
 - You NEVER use words more than three syllables long. ALWAYS choose the simplest synonym.
 """
 }
+# ---------------------------------------------------------------
+# Alistair's Prompt Engnieering for Specifically Graph-Orientated Law Summarisation
+# -----------------------------------------------------------------

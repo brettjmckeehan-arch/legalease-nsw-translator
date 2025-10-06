@@ -14,7 +14,7 @@ The application uses a sophisticated two-stage pipeline to simplify complex lega
 * **Multi-API and model selection**: Allows users to choose from a variety of state-of-the-art models from Anthropic (Claude), OpenAI (GPT), and Google (Gemini).
 * **Dynamic prompt selection**: Provides a dropdown menu to workshop different prompt styles, allowing for experimentation with the AI's instructions.
 * **Advanced PDF processing**: Supports both text-based and scanned (image-based) PDFs through an integrated **Optical Character Recognition (OCR)** engine.
-
+**Legal Citation Graph**: With a pre-made legal citation network of primary and secondary legislation of NSW, allows for the selection and visualisation of connections of legislation, and searching through all NSW legislation. 
 ---
 
 ## Setup
