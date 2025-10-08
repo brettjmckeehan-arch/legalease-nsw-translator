@@ -1,0 +1,26 @@
+# Core ML and AI
+anthropic
+openai
+transformers
+torch
+tokenizers
+
+# Google services
+google-generativeai
+google-api-python-client
+
+# Document processing
+PyMuPDF
+pytesseract
+pillow
+
+# Web framework
+streamlit
+
+# Utilities
+networkx
+pyvis
+python-dotenv
+
+# Note: Don't include 'fitz' - it's provided by PyMuPDF
+# Note: Don't include 'prompts', 'pyvis', 'src', 'google' - these aren't standard packages or are internal

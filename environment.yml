@@ -1,5 +1,6 @@
-name: legalease
+name: base
 channels:
+<<<<<<< Updated upstream
   - conda-forge
   - defaults
   - nvidia
@@ -268,3 +269,22 @@ dependencies:
       - xxhash==3.6.0
       - yarl==1.20.1
 prefix: C:\Users\mckee\miniconda3\envs\legalease
+=======
+  - defaults
+dependencies:
+  - python=3.13
+  - conda=25.7.0
+  - setuptools
+  - pip
+  - wheel
+  - conda-anaconda-telemetry[version='>=0.3.0']
+  - conda-anaconda-tos[version='>=0.2.2']
+  - conda-content-trust
+  - conda-libmamba-solver
+  - menuinst
+  - anaconda_prompt
+  - anaconda_powershell_prompt
+  - anaconda-anon-usage
+  - anaconda-auth
+prefix: C:\Users\mckee\miniconda3
+>>>>>>> Stashed changes
