@@ -1,6 +1,6 @@
 # src/pdf_handler.py
 
-import fitz 
+import fitz  # PyMuPDF
 import pytesseract
 from PIL import Image
 import io
