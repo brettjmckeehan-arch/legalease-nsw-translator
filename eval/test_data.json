@@ -1,0 +1,522 @@
+[
+    {
+        "id": "parking_ticket_01",
+        "document_type": "Parking Fine",
+        "full_text": "PENALTY NOTICE PARKING OFFENCE REVENUE NSW Locked Bag 5099 Parramatta NSW 2124 ABN: 44 018 226 596 PENALTY NOTICE NO: 4567890123 ISSUE DATE: 15/09/2025 ISSUE TIME: 10:45 AM DUE DATE: 13/10/2025 VEHICLE DETAILS Registration Number: ABC123 State/Territory: NSW Vehicle Type: Sedan OFFENCE DETAILS Offence: Park for longer than indicated Location: George Street, Sydney Nearest Cross Street: Martin Place Council/Area: City of Sydney Officer ID: 7894 PENALTY AMOUNT Fine Amount: $135.00 TOTAL AMOUNT DUE: $135.00",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "tenancy_agreement_01",
+        "document_type": "Tenancy Agreement",
+        "full_text": "This Residential Tenancy Agreement is made on the 1st of October 2025 between Priya Kapoor (Landlord) and Wei Zhang (Tenant) for the property located at Unit 3/45 Windsor Road, Kellyville NSW 2155. The term of this agreement is 12 months commencing 1 October 2025. Weekly rent is $580.00 payable in advance. Bond amount $2,320.00 has been paid and lodged with NSW Fair Trading. The tenant agrees to maintain the property in good condition and the landlord agrees to ensure the property is fit for habitation.",
+        "metadata": {
+            "name_origin": "Mixed (South Asian, East Asian)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "breach_notice_01",
+        "document_type": "Breach of Contract Notice",
+        "full_text": "NOTICE OF BREACH OF CONTRACT. To: ABC Construction Pty Ltd, 789 Industrial Drive, Blacktown NSW 2148. From: Green Valley Developments Ltd, Level 5, 123 King Street, Sydney NSW 2000. Date: 18 September 2025. RE: Construction Contract dated 15 March 2025 - Project Alpha. We hereby notify you that you are in material breach of the above contract. Clause 8.2 requires completion of foundation work by 15 September 2025. As of today's date, only 60% of foundation work has been completed. You have 14 days to remedy this breach or we will exercise our rights under clause 12.4 including termination and seeking damages.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "employment_contract_01",
+        "document_type": "Employment Contract",
+        "full_text": "EMPLOYMENT CONTRACT. This agreement is made on 1 November 2025 between TechCore Solutions Pty Ltd ABN 12 345 678 901 (Employer) and Amara Okafor (Employee). Position: Senior Software Developer. Commencement Date: 15 November 2025. Salary: $125,000 per annum plus superannuation. The employee will work 38 hours per week. Annual leave entitlement is 4 weeks. Notice period for termination is 4 weeks by either party. The employee agrees to maintain confidentiality of all proprietary information and will not compete with the employer for 6 months post-employment within a 50km radius.",
+        "metadata": {
+            "name_origin": "West African",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "will_01",
+        "document_type": "Last Will and Testament",
+        "full_text": "LAST WILL AND TESTAMENT OF YASMIN PATEL. I, Yasmin Patel of 42 Ocean View Drive, Coogee NSW 2034, being of sound mind, hereby revoke all previous wills and testamentary dispositions. I appoint my daughter Anjali Patel as executor. I give my entire estate to be divided as follows: 50% to my daughter Anjali Patel, 30% to my son Rahul Patel, 20% to the Cancer Council Australia. My jewellery collection is to be given to my granddaughter Ishani. Signed this 5th day of September 2025 in the presence of two witnesses.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "divorce_petition_01",
+        "document_type": "Divorce Application",
+        "full_text": "APPLICATION FOR DIVORCE. Federal Circuit and Family Court of Australia. Applicant: Fatima Hassan. Respondent: Omar Hassan. We were married on 12 June 2015 at St Mary's Cathedral, Sydney NSW. We separated on 15 January 2024 and have lived separately since that date. There are two children of the marriage: Leila Hassan (age 7) and Zayn Hassan (age 5). We have made arrangements for parenting which are in the children's best interests. I believe the marriage has broken down irreversibly and there is no reasonable likelihood of resumption of cohabitation. Filed 20 September 2025.",
+        "metadata": {
+            "name_origin": "Middle Eastern",
+            "name_complexity": "moderate",
+            "cultural_context": "Middle Eastern Australian"
+        }
+    },
+    {
+        "id": "statutory_declaration_01",
+        "document_type": "Statutory Declaration",
+        "full_text": "STATUTORY DECLARATION. Oaths Act 1900 (NSW). I, Deepak Sharma of 156 Park Avenue, Burwood NSW 2134, do solemnly and sincerely declare that on 10 September 2025 at approximately 3:30 PM I witnessed a motor vehicle accident at the intersection of Parramatta Road and Liverpool Road, Ashfield. A red Toyota Camry registration DEF456 failed to stop at a red traffic signal and collided with a blue Honda Civic registration GHI789 which had right of way. I make this solemn declaration believing the statements to be true. Declared at Burwood NSW on 12 September 2025 before me, Justice of the Peace.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "power_of_attorney_01",
+        "document_type": "Power of Attorney",
+        "full_text": "ENDURING POWER OF ATTORNEY. Powers of Attorney Act 2003 (NSW). I, Maria Nguyen of 78 Riverside Terrace, Hunters Hill NSW 2110, appoint my daughter Linda Nguyen of 23 Beach Road, Manly NSW 2095 as my attorney. This power of attorney is an enduring power and continues despite any subsequent loss of capacity. My attorney has authority to do anything on my behalf that I can lawfully do by attorney including managing my financial affairs, operating bank accounts, dealing with real estate, and making legal decisions. This appointment takes effect immediately. Signed 8 September 2025 in presence of witnesses.",
+        "metadata": {
+            "name_origin": "Vietnamese",
+            "name_complexity": "simple",
+            "cultural_context": "Vietnamese Australian"
+        }
+    },
+    {
+        "id": "lease_commercial_01",
+        "document_type": "Commercial Lease",
+        "full_text": "COMMERCIAL LEASE AGREEMENT. Landlord: Premium Properties Ltd ACN 123 456 789. Tenant: Fresh Bakery Co Pty Ltd ACN 987 654 321. Premises: Shop 12, Westfield Shopping Centre, 500 Oxford Street, Bondi Junction NSW 2022. Term: 5 years commencing 1 December 2025. Annual rent: $180,000 plus GST, reviewed annually by CPI. Outgoings: Tenant responsible for electricity, water, council rates proportionate share. Permitted use: Retail bakery and cafe only. Tenant must maintain public liability insurance of $20 million. Option to renew for further 5 year term provided no breaches.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "demand_letter_01",
+        "document_type": "Letter of Demand",
+        "full_text": "LETTER OF DEMAND. Johnson & Partners Solicitors, Level 8, 456 Elizabeth Street, Sydney NSW 2000. To: Mr. Kofi Mensah, 99 Mountain Road, Katoomba NSW 2780. Date: 22 September 2025. RE: Outstanding Invoice #2025-447. Our client, Superior Office Supplies Pty Ltd, has instructed us regarding your failure to pay invoice #2025-447 dated 15 July 2025 in the amount of $8,450.00 for office furniture supplied to your business. Despite multiple reminders, payment remains outstanding. We demand payment of $8,450.00 plus interest of $285.00 within 7 days. Failing payment, we have instructions to commence legal proceedings without further notice and you will be liable for legal costs.",
+        "metadata": {
+            "name_origin": "West African",
+            "name_complexity": "moderate",
+            "cultural_context": "West African Australian"
+        }
+    },
+    {
+        "id": "non_disclosure_agreement_01",
+        "document_type": "Non-Disclosure Agreement",
+        "full_text": "MUTUAL NON-DISCLOSURE AGREEMENT. This agreement is made on 25 September 2025 between InnovateTech Pty Ltd ABN 11 222 333 444 and FutureSoft Solutions Pty Ltd ABN 55 666 777 888. The parties wish to explore a potential business relationship and will disclose confidential information. Confidential Information means all technical, business, financial information, trade secrets, and proprietary data. Each party agrees to keep confidential information secret, not disclose to third parties, use only for the permitted purpose, and return all materials upon request. This obligation continues for 3 years after termination. Breaches may result in injunctive relief and damages.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "trademark_cease_desist_01",
+        "document_type": "Cease and Desist Letter",
+        "full_text": "CEASE AND DESIST - TRADEMARK INFRINGEMENT. Matthews Legal, Suite 200, 789 George Street, Sydney NSW 2000. To: QuickBite Foods Pty Ltd. Date: 28 September 2025. Our client, FastFood Enterprises Ltd, owns registered trademark #1234567 for QUICKBITE for restaurant services registered 15 March 2020. Your use of QUICKBITE for your food delivery business constitutes trademark infringement under Trade Marks Act 1995 (Cth). Your conduct is likely to deceive and cause confusion. DEMAND: Immediately cease all use of QUICKBITE, remove all signage and marketing materials, confirm compliance in writing within 14 days. Failure to comply will result in Federal Court proceedings seeking injunctions, damages, and legal costs.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "small_claims_statement_01",
+        "document_type": "Statement of Claim",
+        "full_text": "NSW CIVIL AND ADMINISTRATIVE TRIBUNAL CONSUMER AND COMMERCIAL DIVISION. Case No: CC 2025/12345. Applicant: Sanjay Reddy. Respondent: Speedy Plumbing Services Pty Ltd. STATEMENT OF CLAIM. On 5 August 2025 the applicant engaged the respondent to repair a bathroom leak for quoted price of $850. The respondent performed substandard work that failed to fix the leak and caused additional water damage to ceiling below. The applicant paid $850 but was forced to engage another plumber who charged $1,200 to fix the original problem and repair damage. The applicant claims $1,200 damages plus $850 refund totalling $2,050. Filed 30 September 2025.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "eviction_notice_01",
+        "document_type": "Termination Notice - No Grounds",
+        "full_text": "NOTICE OF TERMINATION OF RESIDENTIAL TENANCY AGREEMENT - NO GROUNDS. To: Ms. Aisha Ibrahim, Tenant, 15 Beach Street, Cronulla NSW 2230. From: Property Investments Ltd, Landlord. Date: 2 October 2025. Premises: 15 Beach Street, Cronulla NSW 2230. This notice is given under Section 84A Residential Tenancies Act 2010 (NSW). The landlord terminates this periodic tenancy without specifying grounds. Termination Date: 1 January 2026 (90 days notice). You must vacate the premises and return all keys by 6:00 PM on the termination date. The property must be left in a reasonably clean condition. Final inspection will be arranged to assess bond refund.",
+        "metadata": {
+            "name_origin": "Middle Eastern/East African",
+            "name_complexity": "moderate",
+            "cultural_context": "Middle Eastern Australian"
+        }
+    },
+    {
+        "id": "shareholders_agreement_01",
+        "document_type": "Shareholders Agreement",
+        "full_text": "SHAREHOLDERS AGREEMENT. Smart Innovations Pty Ltd ACN 111 222 333. Dated: 10 October 2025. Shareholders: Mei Wong (40% - 400 shares), Carlos Rodriguez (35% - 350 shares), Thanh Le (25% - 250 shares). The shareholders agree: All major decisions require 75% vote. Shares cannot be transferred without right of first refusal to existing shareholders. Dividend policy to be determined annually by board. Non-compete clause applies for 2 years post-departure. Dispute resolution by mediation before arbitration. Any shareholder wishing to exit must offer shares pro-rata to others at independently valued price. Company will maintain D&O insurance of $5 million.",
+        "metadata": {
+            "name_origin": "Mixed (East Asian, Latin American, Vietnamese)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "avo_application_01",
+        "document_type": "AVO Application",
+        "full_text": "APPLICATION FOR APPREHENDED VIOLENCE ORDER. Local Court of NSW at Parramatta. Applicant (Protected Person): Yuki Tanaka. Defendant: Bradley Collins. The applicant seeks an Apprehended Domestic Violence Order. Grounds: The defendant has engaged in threatening behaviour, sent abusive text messages on 15, 17, and 20 September 2025, attended applicant's workplace causing distress on 22 September 2025, and has history of intimidating conduct. The applicant fears violence and stalking. Orders sought: Defendant not to assault, threaten, stalk, harass or intimidate applicant; not to approach within 100m of applicant's home or workplace; not to contact by any means. Filed 1 October 2025.",
+        "metadata": {
+            "name_origin": "Mixed (Japanese, Western European)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "debt_agreement_01",
+        "document_type": "Deed of Settlement",
+        "full_text": "DEED OF SETTLEMENT AND RELEASE. Between: Creditor Finance Corp Ltd ACN 222 333 444 (Creditor) and Rashid Al-Mansour (Debtor). Date: 5 October 2025. WHEREAS the debtor owes $45,000 to the creditor arising from personal loan agreement dated 1 June 2023. The parties agree: Debtor will pay $30,000 in full settlement in instalments of $2,500 monthly commencing 15 October 2025. Upon final payment, creditor releases debtor from all claims. Default in payment revives full debt of $45,000 less amounts paid. This deed is binding and confidential. Both parties release each other from all claims related to this matter.",
+        "metadata": {
+            "name_origin": "Middle Eastern",
+            "name_complexity": "complex",
+            "cultural_context": "Middle Eastern Australian"
+        }
+    },
+    {
+        "id": "building_contract_01",
+        "document_type": "Building Contract",
+        "full_text": "RESIDENTIAL BUILDING CONTRACT. Owner: Lakshmi and Vijay Krishnan, 88 Hill Street, Wollongong NSW 2500. Builder: Quality Homes NSW Pty Ltd Licence #123456C. Date: 8 October 2025. Works: Construction of two-storey dwelling at 92 Hill Street, Wollongong NSW 2500 according to plans DA-2025-889. Contract Price: $685,000 including GST. Commencement: 1 November 2025. Completion: 1 August 2026. Progress payments based on stages. Builder warrants work complies with Building Code of Australia and provides 6 year structural warranty. Variations must be in writing. Liquidated damages $500 per day for delay beyond 30 days.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "partnership_agreement_01",
+        "document_type": "Partnership Agreement",
+        "full_text": "PARTNERSHIP AGREEMENT. The Harbour Consulting Group. Partners: Dr. Zainab Rahman (50%) and Jennifer Kim (50%). Dated: 12 October 2025. Business: Management consulting services. Capital contributions: Each partner contributes $50,000. Profits and losses shared equally. Both partners have equal management authority. Decisions require unanimous agreement. Partnership accounts maintained by registered accountant. Either partner may retire with 6 months notice. On retirement, departing partner entitled to 50% of net asset value. Partnership dissolves on death, bankruptcy, or agreement. Non-solicitation of clients applies for 12 months post-departure.",
+        "metadata": {
+            "name_origin": "Mixed (Middle Eastern, East Asian)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "copyright_notice_01",
+        "document_type": "Copyright Infringement Notice",
+        "full_text": "COPYRIGHT INFRINGEMENT NOTICE. Creative Rights Management, Level 4, 321 Pitt Street, Sydney NSW 2000. To: Digital Media Hub Pty Ltd. Date: 15 October 2025. Our client, renowned photographer Ming Chen, owns copyright in photograph 'Sydney Harbour Sunset' created 5 March 2024. You are reproducing this image on your website www.digitalmediahub.com.au and social media without licence or permission. This constitutes copyright infringement under Copyright Act 1968 (Cth). DEMAND: Remove all copies within 48 hours, provide written confirmation of compliance, account for all profits derived. Licence fee for retrospective use: $5,000. Failure to comply will result in Federal Court proceedings seeking injunctions, damages, and additional damages for flagrant infringement.",
+        "metadata": {
+            "name_origin": "East Asian",
+            "name_complexity": "simple",
+            "cultural_context": "East Asian Australian"
+        }
+    },
+    {
+        "id": "family_provision_claim_01",
+        "document_type": "Family Provision Claim",
+        "full_text": "SUPREME COURT OF NEW SOUTH WALES EQUITY DIVISION. In the matter of the Estate of Dimitrios Papadopoulos (deceased). Plaintiff: Elena Papadopoulos. SUMMONS FOR FAMILY PROVISION ORDER. The deceased died on 15 June 2025 leaving a will dated 3 January 2020. The plaintiff is the deceased's daughter and eligible person under Succession Act 2006 (NSW). The will leaves entire estate valued at $2.8 million to deceased's second wife. The plaintiff received no provision despite being financially dependent on deceased until his death and having inadequate means. The plaintiff seeks provision from estate for adequate maintenance including sum of $800,000. Filed 18 October 2025.",
+        "metadata": {
+            "name_origin": "Greek",
+            "name_complexity": "complex",
+            "cultural_context": "Greek Australian"
+        }
+    },
+    {
+        "id": "restraining_order_breach_01",
+        "document_type": "AVO Breach Notice",
+        "full_text": "NOTICE OF BREACH OF APPREHENDED VIOLENCE ORDER. From: NSW Police Force, Surry Hills Police Station. To: Marcus Johnson. Date: 20 October 2025. You are hereby notified that you have breached Apprehended Violence Order 2024/567 made at Downing Centre Local Court on 15 March 2024. On 19 October 2025 at 8:45 PM you attended 44 River Road, Lane Cove NSW 2066 being the protected person's residence in breach of Order prohibiting approach within 200 metres. You will be charged with contravention of AVO contrary to Section 14 Crimes (Domestic and Personal Violence) Act 2007. You are required to attend Hornsby Local Court on 15 November 2025 at 9:00 AM. Court Attendance Notice attached.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "workers_comp_claim_01",
+        "document_type": "Workers Compensation Claim",
+        "full_text": "WORKERS COMPENSATION CLAIM FORM. Worker: Fatima Al-Hashimi. Employer: Metro Construction Group Pty Ltd. Date of Injury: 25 September 2025. Time: 11:30 AM. Location: Construction site, 500 Pacific Highway, St Leonards. Nature of injury: Fractured left wrist from fall off scaffold. Medical treatment: Royal North Shore Hospital emergency department, Dr. Sarah Phillips. Time off work: Estimated 8-12 weeks. Weekly earnings: $1,850 gross. Witnesses: Tom Bradley (site supervisor), James Chen (co-worker). Incident details: Worker fell approximately 2 metres when scaffold plank gave way. Safety equipment worn: Hard hat, safety boots, high-vis vest. Claim submitted to icare 27 September 2025.",
+        "metadata": {
+            "name_origin": "Middle Eastern",
+            "name_complexity": "complex",
+            "cultural_context": "Middle Eastern Australian"
+        }
+    },
+    {
+        "id": "unfair_dismissal_claim_01",
+        "document_type": "Unfair Dismissal Application",
+        "full_text": "FAIR WORK COMMISSION UNFAIR DISMISSAL APPLICATION. Applicant: Aaliyah Washington. Respondent: Superior Retail Group Pty Ltd. Employment commenced: 15 January 2023. Position: Store Manager. Dismissal date: 10 October 2025. The applicant was dismissed without valid reason after raising concerns about workplace safety and wage underpayments. The dismissal was harsh, unjust and unreasonable. No proper warning given. Procedural fairness denied - no opportunity to respond to allegations. The applicant earned $75,000 annually and has been unable to secure alternative employment. Remedy sought: Reinstatement or compensation of 26 weeks pay ($37,500). Filed 24 October 2025.",
+        "metadata": {
+            "name_origin": "African American",
+            "name_complexity": "moderate",
+            "cultural_context": "African American Australian"
+        }
+    },
+    {
+        "id": "property_settlement_01",
+        "document_type": "Property Settlement Agreement",
+        "full_text": "BINDING FINANCIAL AGREEMENT - PROPERTY SETTLEMENT. Parties: Hiroshi Yamamoto and Sophia Kovac. Date: 28 October 2025. The parties separated on 5 May 2025 after 12 years marriage. Asset pool valued at $1,850,000 comprising: Family home valued $1,200,000 (mortgage $380,000), husband's superannuation $420,000, wife's superannuation $180,000, motor vehicles $65,000, savings $45,000. Agreement: Wife receives family home (assumes mortgage), husband's superannuation split equally, husband retains motor vehicles. Each retains own personal items. No spousal maintenance. This agreement is binding under Family Law Act 1975 (Cth). Both parties received independent legal advice.",
+        "metadata": {
+            "name_origin": "Mixed (Japanese, Eastern European)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "noise_complaint_01",
+        "document_type": "Noise Complaint Letter",
+        "full_text": "NOISE COMPLAINT - BREACH OF COUNCIL REGULATIONS. To: The Hills Shire Council, 3 Columbia Court, Baulkham Hills NSW 2153. From: Indira Desai, 15 Greenwood Avenue, Castle Hill NSW 2154. Date: 1 November 2025. RE: Ongoing noise disturbance from 17 Greenwood Avenue. I wish to formally complain about excessive noise from neighbouring property. For past 6 weeks, loud music played until 2:00 AM on Thursday, Friday, Saturday nights. Barking dogs throughout day and night. Power tools used on Sundays before 8:00 AM. This breaches Protection of Environment Operations Act 1997 and Council noise policy. I have approached neighbours without resolution. I request Council investigation and enforcement action. Evidence: Noise diary attached, recordings available. Contact: 0412 345 678.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "probate_application_01",
+        "document_type": "Probate Application",
+        "full_text": "SUPREME COURT OF NEW SOUTH WALES PROBATE DIVISION. Application for Grant of Probate. Deceased: Kenji Watanabe, late of 67 Park Avenue, Mosman NSW 2088, died 15 September 2025 aged 78 years. Applicant: Akiko Watanabe (daughter), executor named in will. Will dated: 10 June 2024. Estate value: Approximately $3,200,000 comprising residence $2,400,000, share portfolio $650,000, bank accounts $120,000, superannuation $30,000. Beneficiaries: Daughter Akiko Watanabe (60%), son Takeshi Watanabe (40%). No family provision claims anticipated. Deceased held no property outside NSW. All appropriate searches conducted. Affidavit of applicant and attesting witness attached. Filed 5 November 2025.",
+        "metadata": {
+            "name_origin": "Japanese",
+            "name_complexity": "moderate",
+            "cultural_context": "Japanese Australian"
+        }
+    },
+    {
+        "id": "strata_dispute_01",
+        "document_type": "NCAT Strata Dispute",
+        "full_text": "NSW CIVIL AND ADMINISTRATIVE TRIBUNAL CONSUMER AND COMMERCIAL DIVISION. Applicant: Owners Corporation SP 12345. Respondent: Ms. Gabriela Santos, Owner Lot 15. STRATA DISPUTE APPLICATION. The respondent has breached by-laws by: Operating short-term rental accommodation (Airbnb) contrary to By-law 12, creating noise disturbances from guests contrary to By-law 4, parking in visitor spaces contrary to By-law 7. Despite notices dated 15 August 2025 and 20 September 2025, breaches continue. Orders sought: Compliance with by-laws, cessation of short-term rentals, civil penalty of $5,500, costs. Evidence: Complaints from 8 residents, Airbnb listing screenshots, photographs of parking violations. Filed 8 November 2025.",
+        "metadata": {
+            "name_origin": "Latin American",
+            "name_complexity": "moderate",
+            "cultural_context": "Latin American Australian"
+        }
+    },
+    {
+        "id": "defamation_concerns_01",
+        "document_type": "Concerns Notice - Defamation",
+        "full_text": "CONCERNS NOTICE UNDER DEFAMATION ACT 2005 (NSW). To: Trevor O'Brien, 88 Ocean Street, Clovelly NSW 2031. From: Dr. Amina Hassan via Peterson Legal Partners. Date: 10 November 2025. You published defamatory matter concerning Dr. Hassan on Facebook on 5 November 2025 stating 'Dr. Hassan is a fraud who misdiagnosed my condition and nearly killed me. She should lose her medical licence.' These statements are false and defamatory, imputing professional incompetence and endangering patients. They have caused serious harm to Dr. Hassan's reputation and practice. We require: Published apology on same platform, removal of post, undertaking not to repeat, damages $25,000. You have 28 days to make offer to make amends. Failure may result in defamation proceedings.",
+        "metadata": {
+            "name_origin": "Mixed (Western European, Middle Eastern)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "restraint_of_trade_01",
+        "document_type": "Restraint of Trade Notice",
+        "full_text": "NOTICE OF BREACH OF RESTRAINT OF TRADE. To: Dr. Nandini Iyer. From: Advanced Medical Clinic Pty Ltd via Harper & Associates. Date: 12 November 2025. You resigned from employment on 30 September 2025. Your employment contract dated 1 March 2021 contains restraint clause 15.2 prohibiting you from practicing medicine within 5km radius of our clinic for 12 months post-employment. You have established competing medical practice at 45 King Street, Newtown NSW 2042, only 800 metres from our clinic. This breaches your contractual restraint. DEMAND: Immediately cease practice at current location, provide undertaking to comply with restraint, account for patients diverted. Failing compliance within 7 days, we will seek urgent injunctive relief in Supreme Court plus damages.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "moderate",
+            "cultural_context": "South Asian Australian"
+        }
+    },
+    {
+        "id": "retail_lease_dispute_01",
+        "document_type": "Retail Lease Dispute Notice",
+        "full_text": "RETAIL LEASES ACT 1994 (NSW) - DISPUTE NOTICE. Tenant: Bella's Boutique Pty Ltd. Landlord: Westside Properties Ltd. Premises: Shop 8, Westside Mall, 200 Crown Street, Wollongong NSW 2500. Date: 15 November 2025. DISPUTE: Landlord failing to maintain air conditioning system since August 2025 despite clause 8.6 obligations. Tenants unable to trade effectively during heatwaves, losing estimated $15,000 revenue. Landlord refusing rent abatement. Under Retail Leases Act we notify dispute and propose mediation. Issues for mediation: Landlord's maintenance obligations, compensation for lost trading, rent abatement during system failure. We have appointed Rosa Martinez as our representative. We seek mediation within 28 days as required by Act.",
+        "metadata": {
+            "name_origin": "Mixed (Western European, Latin American)",
+            "name_complexity": "simple",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "complaint_legal_services_01",
+        "document_type": "Legal Services Commissioner Complaint",
+        "full_text": "COMPLAINT TO OFFICE OF LEGAL SERVICES COMMISSIONER. Complainant: Jin Park, 99 Mountain Road, Katoomba NSW 2780. Respondent: William Davies, Davies Legal Services, 44 Market Street, Sydney NSW 2000. Date: 18 November 2025. COMPLAINT: Mr Davies was retained for property conveyancing in March 2025, paid $3,500. He failed to attend settlement on 15 June 2025 causing transaction to fall through and $50,000 deposit forfeiture. He did not return calls for 3 months. No trust account statement provided. Possible misconduct: Failure to act competently and diligently, failure to communicate, possible trust money issues. I seek investigation and disciplinary action. Documents attached: Retainer agreement, correspondence, bank statements showing payment.",
+        "metadata": {
+            "name_origin": "East Asian",
+            "name_complexity": "simple",
+            "cultural_context": "East Asian Australian"
+        }
+    },
+    {
+        "id": "child_support_variation_01",
+        "document_type": "Child Support Change of Assessment",
+        "full_text": "APPLICATION TO CHANGE CHILD SUPPORT ASSESSMENT. Services Australia - Child Support. Applicant: Mariam Abdi (payee parent). Respondent: Hassan Abdi (paying parent). Current assessment: $450 per month for 2 children. Date: 20 November 2025. GROUNDS FOR VARIATION: Respondent's income increased substantially - now earns $180,000 vs reported $95,000. Respondent purchased luxury vehicle valued $85,000. Children have special needs requiring additional costs - Amina requires speech therapy $200/week, Omar requires occupational therapy $180/week. Current assessment inadequate to meet children's needs. Evidence: Respondent's social media showing luxury purchases, medical reports, therapy invoices. Seeking reassessment based on actual income and special circumstances.",
+        "metadata": {
+            "name_origin": "East African",
+            "name_complexity": "moderate",
+            "cultural_context": "East African Australian"
+        }
+    },
+    {
+        "id": "liquor_licence_objection_01",
+        "document_type": "Liquor Licence Objection",
+        "full_text": "OBJECTION TO LIQUOR LICENCE APPLICATION. To: Liquor & Gaming NSW. From: Residents of Elm Street Action Group. Date: 22 November 2025. RE: Application L2025/6789 - Late Night Liquor Licence, Party House Bar, 150 Elm Street, Newtown NSW 2042. We object to grant of licence permitting service until 3:00 AM. Grounds: Residential area with families and elderly residents, existing noise issues from neighbouring venues, inadequate parking causing traffic problems, history of violence at similar venues nearby, breach of local liquor accord. We are adversely affected parties under Liquor Act 2007. The grant would increase disturbance, crime, and anti-social behaviour. We request public hearing. Representatives: Joanne Tan (President), 30 residents supporting. Contact: residents.elmst@email.com",
+        "metadata": {
+            "name_origin": "Mixed (East Asian, Western European)",
+            "name_complexity": "simple",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "discrimination_complaint_01",
+        "document_type": "Anti-Discrimination Complaint",
+        "full_text": "COMPLAINT TO ANTI-DISCRIMINATION NSW. Complainant: Keisha Johnson. Respondent: Elite Finance Corporation Pty Ltd. Date: 25 November 2025. DISCRIMINATION TYPE: Pregnancy discrimination in employment. DETAILS: I commenced employment as Financial Analyst on 10 January 2024. On 15 August 2025 I informed manager of pregnancy. From that date: Given less important work, excluded from meetings, denied training opportunities others received, subjected to comments 'we can't rely on you now', performance review downgraded without justification. On 1 November 2025 made redundant - my role only one eliminated despite being highest performer. This breaches Anti-Discrimination Act 1977 (NSW). Relief sought: Compensation for economic loss and hurt/humiliation, reinstatement or damages in lieu. Attempts at informal resolution failed.",
+        "metadata": {
+            "name_origin": "African American",
+            "name_complexity": "simple",
+            "cultural_context": "African American Australian"
+        }
+    },
+    {
+        "id": "rates_objection_01",
+        "document_type": "Council Rates Objection",
+        "full_text": "OBJECTION TO COUNCIL RATES ASSESSMENT. To: Willoughby City Council, 31 Victor Street, Chatswood NSW 2067. From: Tariq Ahmed, Owner, 77 Boundary Street, Roseville NSW 2069. Date: 28 November 2025. RE: Rates Assessment Notice 2025-26, Property ID 1234567. I object to rates assessment of $4,850 as excessive and incorrect. Grounds: Land valuation of $1,850,000 significantly exceeds comparable properties in street (neighbors at #73 and #81 valued at $1,620,000 and $1,650,000), recent independent valuation obtained for refinancing assessed property at $1,680,000, property has restricted rear access affecting value. I request reassessment and adjustment. Under Local Government Act 1993 I request Council review. Independent valuation report attached. I reserve right to appeal to Land and Environment Court if necessary.",
+        "metadata": {
+            "name_origin": "Middle Eastern",
+            "name_complexity": "simple",
+            "cultural_context": "Middle Eastern Australian"
+        }
+    },
+    {
+        "id": "personal_injury_loi_01",
+        "document_type": "Letter of Claim - Personal Injury",
+        "full_text": "LETTER OF CLAIM - MOTOR VEHICLE ACCIDENT. Smith & Partners Personal Injury Lawyers. To: NRMA Insurance, Claims Department. Date: 2 December 2025. Our client: Aisha Campbell, DOB 15/03/1988. Your insured: Driver of vehicle registration ABC123. Accident date: 15 September 2025, 4:30 PM. Location: Intersection Pacific Highway and Berry Street, North Sydney. Liability: Your insured failed to give way when turning right, colliding with our client's vehicle. Police report 2025/12345 confirms your insured at fault. Injuries: Whiplash, lower back strain, ongoing neck pain, requiring physiotherapy 3x weekly. Unable to work for 6 weeks losing $9,800 wages. Claim: $9,800 economic loss, $25,000 general damages, $4,200 medical expenses, total $39,000. Medical reports attached. We propose pre-court settlement.",
+        "metadata": {
+            "name_origin": "Mixed (Middle Eastern, Western European)",
+            "name_complexity": "simple",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "caveat_lodgement_01",
+        "document_type": "Caveat Notice",
+        "full_text": "NOTICE OF LODGEMENT OF CAVEAT. NSW Land Registry Services. Property: Lot 45 DP 123456, 88 Riverside Drive, Drummoyne NSW 2047. Caveator: Paulo Silva, 12 King Street, Balmain NSW 2041. Date: 5 December 2025. Estate or interest claimed: Equitable interest as purchaser under Contract for Sale dated 20 October 2025. Grounds: Caveator entered contract to purchase property for $2,100,000, paid deposit $210,000, settlement due 15 January 2026. Registered proprietor now attempting to sell to third party at higher price in breach of contract. Caveator claims equitable interest and seeks to protect interest pending specific performance proceedings. This caveat prohibits registration of any dealing without caveator's consent or Court order. Solicitor: Chen & Associates, Level 5, 200 Pitt Street, Sydney NSW 2000. Supporting documents: Contract for sale, deposit receipt, correspondence evidencing breach.",
+        "metadata": {
+            "name_origin": "Latin American",
+            "name_complexity": "simple",
+            "cultural_context": "Latin American Australian"
+        }
+    },
+    {
+        "id": "building_defects_notice_01",
+        "document_type": "Building Defects Notice",
+        "full_text": "NOTICE OF BUILDING DEFECTS. To: Skyline Constructions Pty Ltd, Licence #654321C. From: Mr & Mrs Nguyen, 42 Hilltop Road, Epping NSW 2121. Date: 8 December 2025. RE: Residential construction completed 15 June 2025. Defects identified during 3-month inspection: Major structural cracks in living room walls and ceiling, water leaks in ensuite bathroom causing ceiling damage to room below, uneven floor tiling throughout ground floor (lippage exceeds Australian Standards), external render cracking and delaminating, windows not properly sealed causing water ingress, balcony waterproofing failure. These defects breach Building Code of Australia and contract specifications. Under Home Building Act 1989 you must rectify within reasonable time. We allow 28 days for rectification plan. Failing compliance we will engage alternative builder and pursue costs plus damages through Fair Trading or NCAT.",
+        "metadata": {
+            "name_origin": "Vietnamese",
+            "name_complexity": "simple",
+            "cultural_context": "Vietnamese Australian"
+        }
+    },
+    {
+        "id": "testamentary_trust_deed_01",
+        "document_type": "Testamentary Trust Deed",
+        "full_text": "TESTAMENTARY TRUST DEED. The Watanabe Family Trust established under Will of Kenji Watanabe deceased 15 September 2025. Trustee: Akiko Watanabe. Beneficiaries: Primary - Akiko Watanabe, Takeshi Watanabe; Discretionary - their children and grandchildren. Trust property: All assets passing under will after payment of debts and testamentary expenses, currently valued $3,200,000. Terms: Trustee has absolute discretion to distribute income and capital among beneficiaries, may accumulate income up to 80 years from testator's death, trustee entitled to reasonable remuneration, investment powers as per Trustee Act 1925 (NSW). Purpose: Tax effective distribution, asset protection, provide for multiple generations. Powers: Trustee may vary investments, advance capital, conduct business. Established 10 December 2025.",
+        "metadata": {
+            "name_origin": "Japanese",
+            "name_complexity": "moderate",
+            "cultural_context": "Japanese Australian"
+        }
+    },
+    {
+        "id": "debt_recovery_default_judgment_01",
+        "document_type": "Default Judgment Application",
+        "full_text": "LOCAL COURT OF NSW - SMALL CLAIMS DIVISION. Plaintiff: Superior Office Supplies Pty Ltd. Defendant: Kofi Mensah trading as Mensah Enterprises. Claim No: 2025/98765. Date: 12 December 2025. APPLICATION FOR DEFAULT JUDGMENT. Statement of Claim filed 15 October 2025 claiming $8,450.00 for goods sold and delivered plus interest. Claim served on defendant 18 October 2025. Defence due 1 November 2025. No defence filed within time or at all. Defendant is in default. Plaintiff entitled to default judgment under UCPR Rule 16.3. Amount claimed: Principal $8,450.00, Interest (from 15 August 2025 to date) $285.00, Court filing fee $199.00, Service fee $120.00. Total judgment sought: $9,054.00 plus costs of this application. Affidavit of debt sworn 12 December 2025 attached.",
+        "metadata": {
+            "name_origin": "West African",
+            "name_complexity": "moderate",
+            "cultural_context": "West African Australian"
+        }
+    },
+    {
+        "id": "avo_variation_01",
+        "document_type": "AVO Variation Application",
+        "full_text": "APPLICATION TO VARY APPREHENDED VIOLENCE ORDER. Downing Centre Local Court. Order: AVO 2024/567 made 15 March 2024. Protected Person: Yuki Tanaka. Defendant: Bradley Collins. Applicant: Bradley Collins (defendant). Date: 15 December 2025. APPLICATION: Defendant seeks variation of Order to permit supervised contact with children at approved contact centre. Current Order prohibits all contact including with children from relationship. Grounds: Defendant completed anger management program, engaged in 6 months counselling with Dr. James Peterson psychologist, maintained sobriety for 9 months, Children's Contact Service willing to supervise, children aged 8 and 6 requesting contact with father. Not seeking removal of Order, only variation to permit supervised child contact. Psychologist report, program certificates, Contact Centre letter attached. Matter listed 20 January 2026.",
+        "metadata": {
+            "name_origin": "Mixed (Japanese, Western European)",
+            "name_complexity": "moderate",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "planning_objection_01",
+        "document_type": "Development Application Objection",
+        "full_text": "OBJECTION TO DEVELOPMENT APPLICATION. To: Ku-ring-gai Council, 818 Pacific Highway, Gordon NSW 2072. From: Residents of Maple Street. Date: 18 December 2025. RE: DA 2025/889 - Five storey apartment building, 50 Maple Street, Lindfield NSW 2070. We object on following grounds: Excessive height - proposed 5 storeys in area zoned R2 with 2 storey character, overdevelopment - 24 apartments on 800sqm lot exceeds density controls, inadequate parking - 18 spaces for 24 units will cause street parking problems, overshadowing - shadows analysis shows neighbouring properties lose 4+ hours sunlight, privacy impacts - balconies overlook neighbouring backyards, stormwater - inadequate drainage for increased runoff. Proposal breaches LEP height and FSR controls. We request refusal or significant modifications. 23 residents supporting objection. Spokesman: Dr. Chinedu Okonkwo, chinedu.o@email.com, 0411 222 333.",
+        "metadata": {
+            "name_origin": "West African",
+            "name_complexity": "complex",
+            "cultural_context": "West African Australian"
+        }
+    },
+    {
+        "id": "consumer_claim_01",
+        "document_type": "Australian Consumer Law Claim",
+        "full_text": "CONSUMER GUARANTEE CLAIM. To: Prestige Motor Vehicles Pty Ltd. From: Jing Liu, 66 Beach Road, Palm Beach NSW 2108. Date: 20 December 2025. RE: Vehicle purchase - 2024 Luxury Sedan purchased 15 June 2025 for $78,500. The vehicle is not of acceptable quality contrary to Australian Consumer Law s54. Defects: Engine warning light constantly illuminating, transmission slipping and jerking, excessive oil consumption 1L per 500km, air conditioning failure, electrical system faults. Vehicle attended your workshop 6 times since purchase without resolution. Vehicle unsafe and unreliable. Under ACL I am entitled to: Repair within reasonable time, or Replacement vehicle, or Refund. I reject repair - 6 attempts failed. I elect REFUND of $78,500. You have 14 days to respond. Failing resolution I will lodge complaint with NSW Fair Trading and pursue NCAT proceedings seeking refund plus consequential losses.",
+        "metadata": {
+            "name_origin": "East Asian",
+            "name_complexity": "simple",
+            "cultural_context": "East Asian Australian"
+        }
+    },
+    {
+        "id": "migration_appeal_01",
+        "document_type": "Migration Review Tribunal Appeal",
+        "full_text": "ADMINISTRATIVE APPEALS TRIBUNAL - MIGRATION AND REFUGEE DIVISION. Applicant: Ms. Oluwaseun Adeyemi. Respondent: Minister for Home Affairs. Review of: Partner Visa (subclass 820/801) refusal decision dated 5 November 2025. Date: 22 December 2025. GROUNDS OF APPEAL: Decision maker erred by finding relationship not genuine and continuing. Evidence not properly considered: Joint bank accounts held 3 years, joint lease agreements, combined utilities, statutory declarations from 8 witnesses, 200+ photographs spanning relationship, social media evidence, travel records. Procedural fairness breach - not given opportunity to address concerns before refusal. Decision unreasonable - weight of evidence clearly establishes genuine relationship. Relief sought: Decision set aside, matter remitted for reconsideration, or Tribunal substitute decision granting visa. Hearing requested. Supporting documents: 300 page evidence bundle. Representative: Migration Solutions Legal, contact@migrationsolutions.com.au",
+        "metadata": {
+            "name_origin": "West African",
+            "name_complexity": "complex",
+            "cultural_context": "West African Australian"
+        }
+    },
+    {
+        "id": "enterprise_agreement_dispute_01",
+        "document_type": "Enterprise Agreement Dispute",
+        "full_text": "FAIR WORK COMMISSION - ENTERPRISE AGREEMENT DISPUTE. Applicant: Transport Workers Union. Respondent: Metro Logistics Pty Ltd. Agreement: Metro Logistics Enterprise Agreement 2023. Date: 28 December 2025. DISPUTE: Employer breaching clause 15.3 by rostering drivers for 14+ hour shifts exceeding agreed maximum 12 hours. Breaching clause 22.1 by refusing overtime rates for weekend work. Failing to provide clause 18 required rest breaks. BARGAINING IN GOOD FAITH DISPUTE: Employer refusing to negotiate 2026 Agreement, not responding to Union's claims, cancelling scheduled meetings, making unilateral changes to conditions. Relief sought: Orders requiring compliance with current Agreement, Orders requiring good faith bargaining, Declaration of breach, Compensation for affected workers. 47 drivers affected. Matter urgent due to safety implications of excessive hours. Conciliation requested before arbitration.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "malpractice_concern_01",
+        "document_type": "Medical Negligence Letter of Claim",
+        "full_text": "LETTER OF CLAIM - MEDICAL NEGLIGENCE. Henderson Legal - Medical Law Division. To: Dr. Marcus Hamilton, Sydney Surgical Centre, 400 Victoria Road, Gladesville NSW 2111. Date: 30 December 2025. Our client: Mr. Isaiah Thompson DOB 22/08/1975. Treatment date: 15 July 2025 - arthroscopic knee surgery. NEGLIGENCE ALLEGATIONS: Failed to identify and treat meniscal tear during surgery despite pre-operative MRI clearly showing tear, operated on wrong compartment of knee, failed to obtain proper informed consent - did not explain material risks, inadequate post-operative care - did not review patient when complications arose, failed to refer for appropriate follow-up when symptoms persisted. CONSEQUENCES: Client required revision surgery by another surgeon on 20 October 2025, ongoing pain and mobility issues, unable to return to work as builder losing $1,850 weekly, suffered psychological trauma. CLAIM: Economic loss $35,000, medical expenses $22,000, general damages $150,000, future economic loss $75,000. Total: $282,000. Expert orthopaedic report attached. We propose mediation within 90 days.",
+        "metadata": {
+            "name_origin": "Mixed (Western European, African American)",
+            "name_complexity": "simple",
+            "cultural_context": "Multicultural Australian"
+        }
+    },
+    {
+        "id": "tax_objection_01",
+        "document_type": "Tax Assessment Objection",
+        "full_text": "OBJECTION TO INCOME TAX ASSESSMENT. To: Australian Taxation Office, GPO Box 9990, Sydney NSW 2001. Taxpayer: Innovate Solutions Pty Ltd ACN 123 456 789. Tax Year: 2024-25. Assessment No: 987654321. Date: 3 January 2026. OBJECTION GROUNDS: Assessment incorrectly disallowed $180,000 R&D tax offset for software development project. Project qualifies under R&D Tax Incentive: Created new knowledge - novel algorithm for data processing, substantial scientific uncertainty regarding technical feasibility, systematic investigation documented in project records, conducted by qualified scientists and engineers. ATO incorrectly classified as routine development. Also incorrectly treated capital expenditure: $250,000 equipment purchases qualify for instant asset write-off under applicable threshold. Seek amended assessment allowing: R&D offset $180,000, instant asset write-off $250,000. Supporting documents: R&D project plan, scientist qualifications, technical reports, equipment invoices. Request review within 60 days or escalation to AAT.",
+        "metadata": {
+            "name_origin": "Western European",
+            "name_complexity": "simple",
+            "cultural_context": "Anglo-Australian"
+        }
+    },
+    {
+        "id": "bail_application_01",
+        "document_type": "Bail Application",
+        "full_text": "LOCAL COURT OF NSW - BAIL APPLICATION. Defendant: Liam O'Sullivan. Charges: Assault occasioning actual bodily harm (1 count), breach of AVO (2 counts). Arrest date: 29 December 2025. Application date: 5 January 2026. BAIL SOUGHT with conditions. SUBMISSIONS: Defendant suitable bail candidate - strong community ties, resided Sydney 40 years, stable employment as electrician for 8 years with Bright Spark Electrical, owns home at 44 George Street Parramatta, willing to surrender passport, no previous convictions, family support - wife and 2 children dependent on income. PROPOSED CONDITIONS: Report daily to Parramatta Police, reside at home address, not contact complainant, not consume alcohol, observe 8pm-6am curfew. UNACCEPTABLE RISK: Can be mitigated by strict conditions. Defendant denies charges and pleads not guilty. Character references attached from employer and community members. Family in court supporting application.",
+        "metadata": {
+            "name_origin": "Irish",
+            "name_complexity": "simple",
+            "cultural_context": "Irish Australian"
+        }
+    },
+    {
+        "id": "wills_probate_caveat_01",
+        "document_type": "Probate Caveat",
+        "full_text": "CAVEAT AGAINST GRANT OF PROBATE. Supreme Court of NSW Probate Division. Estate of: Rosa Martinez deceased 10 November 2025. Caveator: Diego Martinez (son of deceased). Date: 8 January 2026. Caveat prohibits grant of probate or administration without notice to caveator. GROUNDS: Caveator has interest in estate as beneficiary under earlier will dated 5 March 2020. Doubts as to validity of later will dated 15 September 2025 on grounds: Testator lacked testamentary capacity due to advanced dementia diagnosis March 2024, undue influence by proposed executor (deceased's carer) who isolated deceased from family, suspicious circumstances - will prepared hastily, deceased's solicitor not involved, will benefits carer substantially. Earlier will distributed estate equally among 3 children. Later will leaves 80% to carer. Caveator seeks Court determination of which will valid. Medical records, expert capacity assessment available. Caveator's solicitor: Estate Law Partners, estates@elp.com.au",
+        "metadata": {
+            "name_origin": "Latin American",
+            "name_complexity": "simple",
+            "cultural_context": "Latin American Australian"
+        }
+    },
+    {
+        "id": "guardianship_application_01",
+        "document_type": "Guardianship Application",
+        "full_text": "NSW CIVIL AND ADMINISTRATIVE TRIBUNAL GUARDIANSHIP DIVISION. Application for Guardianship Order. Subject person: Maria Nguyen, DOB 15/03/1940, residing Sunnyview Nursing Home, 88 Park Road, Hornsby NSW 2077. Applicant: Linda Nguyen (daughter). Date: 10 January 2026. NEED FOR ORDER: Subject has advanced Alzheimer's disease, unable to make decisions regarding healthcare, accommodation, services. Capacity assessment by Dr. Philip Chen (geriatrician) confirms lack of decision-making capacity. CURRENT SITUATION: Subject requires ongoing high-level care, decisions needed regarding medication, medical treatments, continued accommodation. No Enduring Guardianship in place. PROPOSED GUARDIAN: Applicant (daughter) who has been primary carer, visits daily, understands mother's values and preferences. FUNCTIONS SOUGHT: Healthcare decisions, accommodation decisions, services decisions. LESS RESTRICTIVE ALTERNATIVES: None appropriate given level of incapacity. Family supportive - son Thomas Nguyen consents. Medical reports, capacity assessment, care plan attached. Hearing requested.",
+        "metadata": {
+            "name_origin": "Vietnamese",
+            "name_complexity": "simple",
+            "cultural_context": "Vietnamese Australian"
+        }
+    },
+    {
+        "id": "sexual_harassment_complaint_01",
+        "document_type": "Sexual Harassment Complaint",
+        "full_text": "COMPLAINT TO AUSTRALIAN HUMAN RIGHTS COMMISSION. Complainant: Ms. Jasmine Patel. Respondent: Premium Finance Corporation Pty Ltd and Mr. David Harrison (Manager). Date: 12 January 2026. SEXUAL HARASSMENT under Sex Discrimination Act 1984 (Cth). CONDUCT: From June 2025, manager David Harrison engaged in: Unwelcome sexual comments about complainant's appearance, inappropriate touching of complainant's shoulders and back, sent sexually suggestive text messages to complainant's personal phone, made explicit sexual propositions, created hostile work environment. Complainant reported to HR on 5 October 2025. Company failed to investigate properly, complainant subjected to retaliation - excluded from projects, negative performance review, ultimately constructively dismissed 15 December 2025. BREACHES: Sexual harassment by individual, vicarious liability of employer, victimisation. IMPACTS: Psychological injury - anxiety and depression diagnosed, economic loss - forced to resign, reputation damage. RELIEF SOUGHT: Apology, compensation $85,000, policy changes, respondent training. Attempts at conciliation: HR meeting failed to resolve. Supporting documents: Text messages, witness statements, medical reports, HR correspondence.",
+        "metadata": {
+            "name_origin": "South Asian",
+            "name_complexity": "simple",
+            "cultural_context": "South Asian Australian"
+        }
+    }
+]

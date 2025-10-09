@@ -7,10 +7,23 @@ from tqdm import tqdm
 import time
 import evaluate
 import os
-from pathlib import Path # Import the Path object
+import sys
+from pathlib import Path
+
+# Add parent directory to path to import from src and root
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root))
+
 from src.summariser import initialise_summariser, summarise_text
 from src import llm_handler
 from prompts import PROMPT_OPTIONS
+
+def generate_visuals(input_filename='outputs/llm_generation_and_evaluation_results.csv'):
+    # Paths resolve from eval folder
+    eval_dir = Path(__file__).resolve().parent
+    input_path = eval_dir / input_filename
+    output_dir = eval_dir / "outputs"
+    output_dir.mkdir(exist_ok=True)
 
 # TEST CONFIG
 PROMPTS_TO_TEST = list(PROMPT_OPTIONS.keys())
@@ -124,7 +137,7 @@ def run_generation_and_evaluation_suite(test_data_path="test_data.json"):
                         pbar.update(1)
 
     print("\nTEST SUITE COMPLETE")
-    print(f"Results for all runs saved to '{output_csv}'.")
+    print(f"Results for all runs saved to '{output_csv}'")
 
 if __name__ == "__main__":
     run_generation_and_evaluation_suite()
@@ -133,6 +146,31 @@ if __name__ == "__main__":
         from llm_translation_suite_analysis import generate_visuals
         generate_visuals()
     except ImportError:
-        print("\nCould not import 'llm_translation_suite_analysis'. Skipping visualisations")
+        print("Import fail. Skipping visualisations")
     except Exception as e:
-        print(f"\nAn error occurred during visualisation: {e}")
+        print(f"Visualisation error: {e}")
+
+if __name__ == "__main__":
+    run_generation_and_evaluation_suite()
+    
+    try:
+        from llm_translation_suite_analysis import generate_visuals
+        generate_visuals()
+    except ImportError:
+        print("Import fail. Skipping visualisations")
+    except Exception as e:
+        print(f"Visualisation error: {e}")
+    
+    # Bias analysis
+    user_input = input("Run bias analysis on these results? (y/n): ").strip().lower()
+    if user_input == 'y':
+        try:
+            from test_llm_translation_suite_bias import run_bias_evaluation
+            run_bias_evaluation(
+                results_csv="outputs/llm_generation_and_evaluation_results.csv",
+                output_csv="outputs/llm_results_with_bias_metrics.csv"
+            )
+        except ImportError:
+            print("No joy importing bias eval script")
+        except Exception as e:
+            print(f"Error in bias eval: {e}")
