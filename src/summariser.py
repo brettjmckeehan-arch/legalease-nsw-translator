@@ -9,12 +9,7 @@ import math
 warnings.filterwarnings("ignore", category=UserWarning, module="transformers")
 
 def initialise_summariser():
-    """
-    Initialises the summarisation pipeline on the CPU to ensure compatibility.
-    """
-    # Force the model to use the CPU (-1). This is the critical line.
-    device = -1
-    
+    device = -1  # Use CPU
     model_name = "facebook/bart-large-cnn" 
     
     try:
@@ -28,10 +23,10 @@ def initialise_summariser():
         print(f"Error initialising model: {e}")
         return None, None
 
+# Summarises text, chunks for long inputs
 def summarise_text(text_to_summarise, summariser, tokeniser):
-    """Summarises text, handling long inputs by chunking."""
     if not text_to_summarise or not isinstance(text_to_summarise, str):
-        return "Invalid input text provided."
+        return "Invalid input text"
 
     max_chunk_length = 1024
     chunk_size = 800  
@@ -80,4 +75,4 @@ def summarise_text(text_to_summarise, summariser, tokeniser):
             return combined_summary
 
     except Exception as e:
-        return f"An unexpected error occurred during summarisation: {e}"
+        return f"Summarisation error: {e}"

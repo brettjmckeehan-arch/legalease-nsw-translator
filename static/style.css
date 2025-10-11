@@ -26,6 +26,7 @@ div[data-testid="stAppViewContainer"] > .main {
 /* DISCLAIMER */
 div[data-testid="stNotification"] p {
     font-size: 0.3rem !important;
+    background-color: #fbffda;
 }
 
 /* LAYOUT ADJUSTMENTS */
@@ -33,13 +34,25 @@ div.block-container {
     padding-top: 1rem !important;
 }
 
-/* DISCLAIMER */
+/* DISCLAIMER - Target st.info() components */
 div[data-testid="stAlert"] {
     text-align: center;
+    background-color: #fcf4c7 !important;
 }
 
 div[data-testid="stAlert"] p {
-    font-weight: bold;
+    font-weight: normal;
+    color: #000000 !important;
+}
+
+/* More specific selector for info alerts */
+div[data-testid="stAlert"][data-baseweb="notification"] {
+    background-color: #fcf4c7 !important;
+}
+
+/* Target the inner content area */
+div[data-testid="stAlert"] > div {
+    background-color: #fcf4c7 !important;
 }
 
 [data-testid="stHorizontalBlock"] {

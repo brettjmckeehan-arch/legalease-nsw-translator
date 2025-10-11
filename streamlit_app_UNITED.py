@@ -30,7 +30,9 @@ defaults = {
     'history': [], 'loaded_graph': None, 'search_term': "", 'graph_initialised': False,
     'graph_html': None, 'show_full_graph': False, 'node_count': 80, 'show_node_slider': False,
     'pending_legislation_search': None, 'latest_translation': None, 'show_translator': True,
-    'search_suggestions': []
+    'search_suggestions': [],
+    'processing_translation': False,
+    'prompt_key': 'With example' 
 }
 for key, value in defaults.items():
     if key not in st.session_state:
@@ -311,6 +313,11 @@ def create_pyvis_graph(_G, search_term="", node_limit=80):
 
 # RENDER UI - GRID LAYOUT
 load_css("static/style.css")
+
+# Introduced search bug eep
+# summariser, tokeniser = load_summariser_model()
+
+# Load citation graph
 if st.session_state.loaded_graph is None:
     with st.spinner("Loading citation graph..."):
         st.session_state.loaded_graph = load_citation_graph()
@@ -319,10 +326,10 @@ if st.session_state.loaded_graph is None:
 st.markdown("""
     <style>
     .header-title {
-        font-size: 24px; font-weight: 300; color: #2c3e50;
+        font-size: 25px; font-weight: bold; color: #2c3e50;
         letter-spacing: 0.5px; line-height: 1.3; margin-bottom: 3px;
     }
-    .header-subtitle {font-size: 13px; color: #7f8c8d; font-weight: 400;}
+    .header-subtitle {font-size: 18px; color: #7f8c8d; font-weight: normal;}
     .stTextInput > label {margin-bottom: 0px !important; padding-bottom: 2px !important;}
     .history-scroll {max-height: 400px; overflow-y: auto;}
     div[data-testid="stVerticalBlock"] > div:has(h3:contains("Translation History")) {margin-top: -20px !important;}
@@ -337,7 +344,7 @@ with col1:
     # Logo and title section
     logo_col, title_col = st.columns([1, 3])
     with logo_col:
-        st.image("static/logo.jpg", width=150)
+        st.image("static/logo3.jpg", width=300)
     with title_col:
         st.markdown("""
             <div style='padding-top: 10px;'>
@@ -482,7 +489,7 @@ with col2:
             st.write("")
             
             # Toggle button for showing slider
-            show_slider = st.checkbox("Display more Laws?", value=st.session_state.show_node_slider,
+            show_slider = st.checkbox("More laws?", value=st.session_state.show_node_slider,
                                      key="show_slider_toggle")
             
             # Update state if changed
@@ -509,8 +516,10 @@ with col2:
             st.session_state.search_term = search_input
             st.session_state.graph_html = None
 
+
 # ROW 2: Document simplifier (left) & NSW Legislation Map Graph (right)
-# The idea for each is to have a more balanced page. 
+# The idea for each is to have a more balanced page.
+# Document Simplifier by Brett McKeehan
 col1, col2 = st.columns([1, 1])
 
 with col1:
@@ -532,16 +541,35 @@ with col1:
             uploaded_file = st.file_uploader("Upload PDF:", type=['pdf'], 
                                             label_visibility="visible", key="pdf_uploader")
             st.markdown("---")
-            prompt_key = st.selectbox("Summary style:", options=list(PROMPT_OPTIONS.keys()),
-                                     index=3, key="prompt_key")
+
+            # Map display labels to actual prompt labels
+            PROMPT_DISPLAY_LABELS = {
+                "Helper mode": "With example",
+                "More detail": "Default",
+                "Explain like I'm 5": "Explain like I'm 5"
+            }
+    
+            # Display labels in radio buttons
+            selected_display_label = st.radio(
+                "Simplification style:",
+                options=list(PROMPT_DISPLAY_LABELS.keys()),
+                index=0,  # Which option is default
+                key="prompt_display"
+            )
+
+            # Store prompt key in session state
+            st.session_state.prompt_key = PROMPT_DISPLAY_LABELS[selected_display_label]
+
             st.markdown("---")
             
-            # Use form to stop frustrating double-click bug
             with st.form(key='translate_form', clear_on_submit=False):
                 process_button = st.form_submit_button("Translate to plain English", 
                                                        use_container_width=True, type="primary")
-
+            
         if process_button:
+            # SET PROCESSING FLAG IMMEDIATELY
+            st.session_state.processing_translation = True
+            
             text_to_process = None
             if uploaded_file:
                 with st.spinner("Extracting text from PDF..."):
@@ -550,10 +578,10 @@ with col1:
                 text_to_process = input_text
 
             if text_to_process:
-                summariser, tokeniser = load_summariser_model()
-                
+                summariser, tokeniser = load_summariser_model() # Attempted fix for search bug     
                 if summariser is None or tokeniser is None:
                     st.error("Cannot proceed without summariser model. Please check your model files.")
+                    st.session_state.processing_translation = False
                 else:
                     with st.spinner("Stage 1/2: Analysing document..."):
                         initial_summary = summarise_text(text_to_process, summariser, tokeniser)
@@ -562,13 +590,13 @@ with col1:
                         stage2_input = f"ORIGINAL DOCUMENT:\n---\n{text_to_process}\n---\n\nSUMMARY OF DOCUMENT:\n---\n{initial_summary}\n---"
                         
                         # Set default model and provider
-                        selected_model = "claude-sonnet-4-5-20250929"
-                        selected_provider = "Anthropic"
+                        selected_model = "gpt-4o"
+                        selected_provider = "OpenAI"
                         selected_prompt = st.session_state.prompt_key
                         
                         with st.spinner(f"Stage 2/2: Rewriting with {selected_model}..."):
                             try:
-                                final_translation = llm_handler.call_anthropic(
+                                final_translation = llm_handler.call_openai(
                                     PROMPT_OPTIONS[selected_prompt], stage2_input, selected_model
                                 )
                                 
@@ -589,81 +617,88 @@ with col1:
                                     
                                     st.session_state.history.insert(0, st.session_state.latest_translation.copy())
                                     st.session_state.show_translator = False
+                                    
+                                    # CLEAR PROCESSING FLAG BEFORE RERUN
+                                    st.session_state.processing_translation = False
                                     st.rerun()
                                 else:
-                                    st.error("The AI model returned an empty response. Please try again with different text or check your API key.")
-                                    st.info(f"Make sure your {selected_provider} API key is properly configured in your environment variables.")
+                                    st.error("The AI model came up empty. Try again with different text or check your API key")
+                                    st.info(f"Make sure your {selected_provider} API key is set up properly")
+                                    st.session_state.processing_translation = False
                             except Exception as e:
-                                st.error(f"Error calling AI model: {str(e)}")
+                                st.error(f"AI model error: {str(e)}")
                                 st.info("""Possible issues:
                                 - Check your API key is valid
-                                - Ensure you have sufficient API credits
+                                - Make sure you have API credits
                                 - Try with shorter text
                                 - Check your internet connection""")
+                                st.session_state.processing_translation = False
                     else:
-                        st.error("Stage 1 summarisation failed. The text may be too short, too long or in an unsupported format.")
+                        st.error("Stage 1 summarisation failed. Check your text format or try a different document.")
+                        st.session_state.processing_translation = False
             else:
-                st.warning("Please provide text or a PDF to translate.")
+                st.warning("You need to add text or a PDF for us to translate")
+                st.session_state.processing_translation = False
     
+        # MORE PROMINENT DISCLAIMER
+        st.info("**DISCLAIMER:** WE PROVIDE TRANSLATIONS FOR INFORMATIONAL PURPOSES ONLY AND ARE NO SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
+
     # Display latest translation when translator is hidden
     if not st.session_state.show_translator and st.session_state.latest_translation:
-        if st.button("← New Translation", key="new_translation_btn", type="primary"):
+        if st.button("← NEW TRANSLATION", key="new_translation_btn", type="primary"):
             st.session_state.show_translator = True
             st.rerun()
-        
-        st.markdown("---")
-        st.markdown("**Latest translation:**")
+
+        # MORE PROMINENT DISCLAIMER
+        st.info("**DISCLAIMER:** WE PROVIDE TRANSLATIONS FOR INFORMATIONAL PURPOSES ONLY AND ARE NO SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
         item = st.session_state.latest_translation
         
         # User message (input)
-        col_user1, col_user2 = st.columns([1, 6])
+        col_user1, col_user2 = st.columns([1, 8])
         with col_user1:
             st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
             try:
                 st.image("static/person_a.png", width=50)
             except:
                 st.markdown("**👤**")
-            st.markdown("<p style='font-size: 12px; margin-top: -5px; font-weight: bold;'>Legal Input</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 18px; margin-top: -5px; font-weight: bold;'>User Input</p>", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
         with col_user2:
             st.caption(f"🕐 {item['timestamp']}")
-            if item.get('legislation'):
-                st.caption(f"📋 {item['legislation']}")
-            display_input = item['input_text'] if len(item['input_text']) <= 200 else item['input_text'][:200] + "..."
-            st.markdown(f"""<div style='background-color: #a8b0ba; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                <strong>Input:</strong> {display_input}
-            </div>""", unsafe_allow_html=True)
+            st.markdown(f"""<div style='background-color: #f5faf6; font-size: 18px; padding: 10px; border-radius: 5px; margin-bottom: 5px; display: inline-block; max-width: 100%;'>
+                        <strong>Initial summary:</strong> {item['legislation']}
+                    </div>""", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
+  
         
         # Assistant message (output)
-        col_assist1, col_assist2 = st.columns([1, 6])
+        col_assist1, col_assist2 = st.columns([1, 8])
         with col_assist1:
             st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
             try:
                 st.image("static/ai_a.png", width=50)
             except:
                 st.markdown("**⚖️**")
-            st.markdown("<p style='font-size: 12px; margin-top: -5px; font-weight: bold;'>Translation Helper</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 18px; margin-top: -5px; font-weight: bold;'>Translation Helper</p>", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
         with col_assist2:
             st.caption(f"📊 {item['model']} • Style: {item['prompt_style']}")
             
             if item['final_output'] is None or (isinstance(item['final_output'], str) and not item['final_output'].strip()):
-                st.markdown(f"""<div style='background-color: #8fb8cc; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                    <strong>Summary:</strong><br>
-                    <span style='color: #d32f2f;'>Error: LegalEase failed to generate a translation.</span>
+                st.markdown(f"""<div style='background-color: #fca19d; font-size: 18px; padding: 10px; border-radius: 5px; margin-bottom: 5px; display: inline-block; max-width: 100%;'>
+                    <span style='color: #d32f2f;'>ERROR: LEGALEASE NSW FAILED TO GENERATE A TRANSLATION</span>
                 </div>""", unsafe_allow_html=True)
             else:
-                st.markdown(f"""<div style='background-color: #8fb8cc; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                    <strong>Summary:</strong><br>
-                    {item['final_output']}
+                st.markdown(f"""<div style='background-color: #edfcff; font-size: 18px; padding: 10px; border-radius: 5px; margin-bottom: 5px; display: inline-block; max-width: 100%;'>
+                    {item['final_output'].replace('<', '&lt;').replace('>', '&gt;').replace('\n', '<br>')}
                 </div>""", unsafe_allow_html=True)
             
             # Expandable section for initial summary and original text
-            with st.expander("🔍 Show initial BART summary and original text"):
+            with st.expander("🔍 Show original text"):
                 st.markdown("**Original text**")
                 st.text(item['input_text'])
                 st.markdown("---")
-                st.markdown("**Intermediary (local model) summary**")
+                st.markdown("**Initial summary**")
                 st.write(item['initial_summary'])
 
 with col2:
@@ -723,120 +758,103 @@ with col2:
 
                 This network contains **{total_nodes}** Acts with **{total_edges}** citation links between them.
                 """)
-            
-            # DISCLAIMER
-            st.info("DISCLAIMER: THIS TOOL PROVIDES SUMMARIES FOR INFORMATIONAL PURPOSES ONLY AND IS NOT A SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
+                 
+                # ORIGINAL DISCLAIMER POSITION
+                # st.info("DISCLAIMER: THIS TOOL PROVIDES SUMMARIES FOR INFORMATIONAL PURPOSES ONLY AND IS NOT A SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
         else:
             st.warning("Graph visualisation failed to load.")
     else:
         st.warning("Could not find 'citation_graph.pkl'. The Legal Map feature will be unavailable.")
 
-# TRANSLATION HISTORY DROPDOWN (full width)
-st.markdown("<div style='margin-top: -20px;'></div>", unsafe_allow_html=True)
-col1, col2 = st.columns([1, 1])
-
-with col1:
+# TRANSLATION HISTORY DROPDOWN (full width, only show if history exists)
+if len(st.session_state.history) > 0:
+    st.markdown("<div style='margin-top: -20px;'></div>", unsafe_allow_html=True)
     st.subheader("Translation History")
     
-    # Helper Function that checks the markdown
-    if len(st.session_state.history) == 0:
-        st.info("No translation history yet. Enter text or upload a PDF above to get started!")
-    else:
-        # Dropdown for chat history
-        with st.expander(f"📚 View All Translations ({len(st.session_state.history)} items)", expanded=False):
-            # Buttons row
-            btn_col1, btn_col2 = st.columns([1, 1])
-            with btn_col1:
-                if st.button("🗑️ Clear all history", key="clear_history_btn", use_container_width=True):
-                    st.session_state.history = []
-                    st.session_state.latest_translation = None
-                    st.rerun()
+    # Dropdown for chat history
+    with st.expander(f"View all translations ({len(st.session_state.history)} items)", expanded=False):
+        # Buttons row
+        btn_col1, btn_col2 = st.columns([1, 1])
+        with btn_col1:
+            if st.button("Clear history", key="clear_history_btn", use_container_width=True):
+                st.session_state.history = []
+                st.session_state.latest_translation = None
+                st.session_state.show_translator = True  # Add this line
+                st.rerun()
+        
+        with btn_col2:
+            # Create downloadable text file from history
+            history_text = "LegalEase NSW - Translation History\n" + "=" * 50 + "\n\n"
             
-            with btn_col2:
-                # Create downloadable text file from history
-                # This function is to make sure that specifcally files are downloaded. 
-                history_text = "LegalEase NSW - Translation History\n" + "=" * 50 + "\n\n"
-                
-                for idx, chat in enumerate(st.session_state.history):
-                    history_text += f"Translation #{len(st.session_state.history) - idx}\n"
-                    history_text += f"Timestamp: {chat['timestamp']}\n"
-                    if chat.get('legislation'):
-                        history_text += f"Legislation: {chat['legislation']}\n"
-                    history_text += f"Model: {chat['model']}\n"
-                    history_text += f"Style: {chat['prompt_style']}\n"
-                    history_text += "-" * 50 + "\n\n"
-                    history_text += f"ORIGINAL INPUT:\n{chat['input_text']}\n\n"
-                    history_text += f"BART SUMMARY:\n{chat['initial_summary']}\n\n"
-                    history_text += f"PLAIN ENGLISH TRANSLATION:\n"
-                    history_text += (chat['final_output'] if chat['final_output'] else "Error: Translation failed.") + "\n\n"
-                    history_text += "=" * 50 + "\n\n"
-                
-                st.download_button(
-                    label="📥 Download", data=history_text,
-                    file_name=f"legalease_history_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
-                    mime="text/plain", key="download_history_btn", use_container_width=True
-                )
-            
-            st.markdown("---")
-            
-            # Display chat history
-            # The idea of displaying chat history is so that the user can see multiple prompts there written in one session 
             for idx, chat in enumerate(st.session_state.history):
-                # User message (input)
-                col_user1, col_user2 = st.columns([1, 6])
-                with col_user1:
-                    st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-                    try:
-                        st.image("static/person_a.png", width=50)
-                    except:
-                        st.markdown("**👤**")
-                    st.markdown("<p style='font-size: 12px; margin-top: -5px; font-weight: bold;'>Legal Input</p>", unsafe_allow_html=True)
-                    st.markdown("</div>", unsafe_allow_html=True)
-                with col_user2:
-                    st.caption(f"🕐 {chat['timestamp']}")
-                    if chat.get('legislation'):
-                        st.caption(f"📋 {chat['legislation']}")
-                    display_input = chat['input_text'] if len(chat['input_text']) <= 200 else chat['input_text'][:200] + "..."
-                    st.markdown(f"""<div style='background-color: #a8b0ba; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                        <strong>Input:</strong> {display_input}
+                history_text += f"Translation #{len(st.session_state.history) - idx}\n"
+                history_text += f"Timestamp: {chat['timestamp']}\n"
+                if chat.get('legislation'):
+                    history_text += f"Legislation: {chat['legislation']}\n"
+                history_text += f"Model: {chat['model']}\n"
+                history_text += f"Style: {chat['prompt_style']}\n"
+                history_text += "-" * 50 + "\n\n"
+                history_text += f"ORIGINAL INPUT:\n{chat['input_text']}\n\n"
+                history_text += f"BART SUMMARY:\n{chat['initial_summary']}\n\n"
+                history_text += f"PLAIN ENGLISH TRANSLATION:\n"
+                history_text += (chat['final_output'] if chat['final_output'] else "Error: Translation failed.") + "\n\n"
+                history_text += "=" * 50 + "\n\n"
+            
+            st.download_button(
+                label="📥 Download", data=history_text,
+                file_name=f"legalease_history_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+                mime="text/plain", key="download_history_btn", use_container_width=True
+            )
+        
+        st.markdown("---")
+        
+        # Display chat history
+        for idx, chat in enumerate(st.session_state.history):
+            # User message (input)
+            col_user1, col_user2 = st.columns([1, 20])
+            with col_user1:
+                st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+                try:
+                    st.image("static/person_a.png", width=50)
+                except:
+                    st.markdown("**👤**")
+                st.markdown("<p style='font-size: 18px; margin-top: -5px; font-weight: bold;'>User Input</p>", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)
+            with col_user2:
+                st.caption(f"🕐 {chat['timestamp']}")
+                if chat.get('legislation'):
+                    st.caption(f"📋 {chat['legislation']}")
+                st.markdown(f"""<div style='background-color: #f5faf6; padding: 5px; border-radius: 5px; margin-bottom: 5px; max-width: 100%; font-family: inherit; font-size: 18px; font-weight: normal;'>
+                    {chat['input_text'].replace('<', '&lt;').replace('>', '&gt;').replace('\n', '<br>')}
+                </div>""", unsafe_allow_html=True)
+            
+            # Assistant message (output)
+            col_assist1, col_assist2 = st.columns([1, 20])
+            with col_assist1:
+                st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+                try:
+                    st.image("static/ai_a.png", width=50)
+                except:
+                    st.markdown("**⚖️**")
+                st.markdown("<p style='font-size: 18px; margin-top: -5px; font-weight: bold;'>Translation Helper</p>", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)
+            with col_assist2:
+                st.caption(f"📊 {chat['model']} • Style: {chat['prompt_style']}")
+                
+                if chat['final_output'] is None or (isinstance(chat['final_output'], str) and not chat['final_output'].strip()):
+                    st.markdown(f"""<div style='background-color: #fca19d; font-size: 18px; padding: 10px; border-radius: 5px; margin-bottom: 5px; max-width: 100%;'>
+                        <span style='color: #d32f2f;'>ERROR: LEGALEASE NSW FAILED TO GENERATE A TRANSLATION</span>
+                    </div>""", unsafe_allow_html=True)
+                else:
+                    st.markdown(f"""<div style='background-color: #edfcff; font-size: 18px; padding: 10px; border-radius: 5px; margin-bottom: 5px; max-width: 100%; font-weight: normal;'>
+                        {chat['final_output'].replace('<', '&lt;').replace('>', '&gt;').replace('\n', '<br>')}
                     </div>""", unsafe_allow_html=True)
                 
-                # Assistant message (output)
-                col_assist1, col_assist2 = st.columns([1, 6])
-                with col_assist1:
-                    st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-                    try:
-                        st.image("static/ai_a.png", width=50)
-                    except:
-                        st.markdown("**⚖️**")
-                    st.markdown("<p style='font-size: 12px; margin-top: -5px; font-weight: bold;'>Translation Helper</p>", unsafe_allow_html=True)
-                    st.markdown("</div>", unsafe_allow_html=True)
-                with col_assist2:
-                    st.caption(f"📊 {chat['model']} • Style: {chat['prompt_style']}")
-                    
-                    if chat['final_output'] is None or (isinstance(chat['final_output'], str) and not chat['final_output'].strip()):
-                        st.markdown(f"""<div style='background-color: #8fb8cc; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                            <strong>Summary:</strong><br>
-                            <span style='color: #d32f2f;'>Error: LegalEase failed to generate a translation.</span>
-                        </div>""", unsafe_allow_html=True)
-                    else:
-                        st.markdown(f"""<div style='background-color: #8fb8cc; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: inline-block; max-width: 100%;'>
-                            <strong>Summary:</strong><br>
-                            {chat['final_output']}
-                        </div>""", unsafe_allow_html=True)
-                    
-                    # Expandable section for initial summary
-                    with st.expander("🔍 Show initial BART summary and original text"):
-                        st.markdown("**Original text**")
-                        st.text(chat['input_text'])
-                        st.markdown("---")
-                        st.markdown("**Intermediary (local model) summary**")
-                        st.write(chat['initial_summary'])
-                
-                # Separator between conversations
-                if idx < len(st.session_state.history) - 1:
-                    st.markdown("---")
-
-with col2:
-    # Right column can be used for additional features or left empty
-    pass
+                # Expandable section for initial summary
+                with st.expander("🔍 Show initial summary"):
+                    st.markdown("**Summary**")
+                    st.write(chat['initial_summary'])
+            
+            # Separator between conversations
+            if idx < len(st.session_state.history) - 1:
+                st.markdown("---")
