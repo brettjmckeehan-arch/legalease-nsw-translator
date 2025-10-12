@@ -532,7 +532,7 @@ with col1:
         
         with input_col:
             input_text = st.text_area(
-                "Paste legal text:", height=500,
+                "Paste legal text:", height=450,
                 placeholder="Add legal text that you'd like to read in plain English, select your preferred summary style and click 'Translate'",
                 key="input_text_area"
             )
@@ -540,7 +540,6 @@ with col1:
         with controls_col:
             uploaded_file = st.file_uploader("Upload PDF:", type=['pdf'], 
                                             label_visibility="visible", key="pdf_uploader")
-            st.markdown("---")
 
             # Map display labels to actual prompt labels
             PROMPT_DISPLAY_LABELS = {
@@ -560,7 +559,6 @@ with col1:
             # Store prompt key in session state
             st.session_state.prompt_key = PROMPT_DISPLAY_LABELS[selected_display_label]
 
-            st.markdown("---")
             
             with st.form(key='translate_form', clear_on_submit=False):
                 process_button = st.form_submit_button("Translate to plain English", 
@@ -641,7 +639,7 @@ with col1:
                 st.session_state.processing_translation = False
     
         # MORE PROMINENT DISCLAIMER
-        st.info("**DISCLAIMER:** WE PROVIDE TRANSLATIONS FOR INFORMATIONAL PURPOSES ONLY AND ARE NO SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
+        st.info("**DISCLAIMER:** Our translations are for informational purposes only. They are no substitute for qualified legal advice.")
 
     # Display latest translation when translator is hidden
     if not st.session_state.show_translator and st.session_state.latest_translation:
@@ -650,7 +648,7 @@ with col1:
             st.rerun()
 
         # MORE PROMINENT DISCLAIMER
-        st.info("**DISCLAIMER:** WE PROVIDE TRANSLATIONS FOR INFORMATIONAL PURPOSES ONLY AND ARE NO SUBSTITUTE FOR QUALIFIED LEGAL ADVICE")
+        st.info("**DISCLAIMER:** Our translations are for informational purposes only. They are no substitute for qualified legal advice.")
         item = st.session_state.latest_translation
         
         # User message (input)
